@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run build)",
+      "Bash(curl -s \"https://api.synopticdata.com/v2/auth?apikey=KuFl3G4naxaEu9VaklYIgKKtqgjh6MIFYqGX9Sy29J\")",
+      "Bash(curl -s \"https://api.synopticdata.com/v2/stations/nearest?token=4baccd49b8684c95a63ca7d83049cb52&lat=39.74&lon=-104.98&within=30&limit=3&vars=air_temp,wind_speed&units=english&output=json\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\); const j=JSON.parse\\(d\\); console.log\\(''RESPONSE_CODE:'', j.SUMMARY?.RESPONSE_CODE\\); console.log\\(''Stations:'', j.STATION?.slice\\(0,2\\).map\\(s=>s.NAME+'' \\(''+s.STID+''\\)''\\)\\);\")",
+      "Bash(curl -s \"https://api.synopticdata.com/v2/stations/latest?token=4baccd49b8684c95a63ca7d83049cb52&radius=39.74,-104.98,30&limit=3&vars=air_temp,wind_speed&units=english&output=json\")",
+      "Bash(curl -s \"https://api.rainviewer.com/public/weather-maps.json\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);const f=j.radar.past.slice\\(-1\\)[0];console.log\\(''host:'',j.host\\);console.log\\(''path:'',f.path\\);console.log\\(''tile URL:'',j.host+f.path+''/512/7/38/48/4/1_1.png''\\);\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type} %{size_download}\" \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/7/38/48/4/1_1.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\" \"https://tile.openstreetmap.org/20/524288/380000.png\" -H \"User-Agent: WeatherApp/1.0\")",
+      "Bash(curl -s -w \"\\\\n%{http_code} %{content_type}\" \"https://tile.openstreetmap.org/19/262144/190000.png\" -H \"User-Agent: WeatherApp/1.0\")",
+      "Bash(grep -o \".\\\\{0,50\\\\}zoom level not supported.\\\\{0,50\\\\}\" \"c:/Users/Olivia Selmonosky/Documents/weather_claude/node_modules/leaflet/dist/leaflet.js\")",
+      "Bash(grep '\"\"version\"\"')",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1741305600/512/7/36/47/4/1_1.png\" -o /dev/null -w \"%{http_code} %{content_type}\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); frames=d[''radar''][''past'']; latest=frames[-1]; print\\(d[''host'']+latest[''path'']\\)\")",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/7/36/47/4/1_1.png\" -o /dev/null -w \"%{http_code} %{content_type}\")",
+      "Bash(mkdir -p /c/Users/OliviaSelmonosky/AppData/Local/Temp)",
+      "Bash(curl -s \"https://a.tile.openstreetmap.org/20/0/0.png\" -o \"C:/Users/Olivia Selmonosky/AppData/Local/Temp/osm_tile.png\" -L -w \"HTTP: %{http_code} Content-Type: %{content_type} Size: %{size_download}\")",
+      "Bash(grep -o \".\\\\{0,30\\\\}zoom level not supported.\\\\{0,30\\\\}\\\\|.\\\\{0,30\\\\}Zoom.*not supported.\\\\{0,30\\\\}\" \"c:/Users/Olivia Selmonosky/Documents/weather_claude/dist/assets/index-D7Pf-YRe.js\")",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/15/0/0/4/1_1.png\" -o /dev/null -w \"zoom15: HTTP %{http_code} type: %{content_type}\")",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/13/0/0/4/1_1.png\" -o /dev/null -w \"zoom13: HTTP %{http_code} type: %{content_type}\")",
+      "Bash(curl -v \"https://a.tile.openstreetmap.org/19/0/0.png\")",
+      "Bash(grep -v \"^\\\\s*//\")",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/2/1/1/4/1_1.png\" -o /dev/null -w \"zoom2: HTTP %{http_code} type: %{content_type} size: %{size_download}\")",
+      "Bash(curl -s \"https://tilecache.rainviewer.com/v2/radar/1772929200/512/3/2/2/4/1_1.png\" -o /dev/null -w \" zoom3: HTTP %{http_code} type: %{content_type} size: %{size_download}\")"
+    ]
+  }
+}
