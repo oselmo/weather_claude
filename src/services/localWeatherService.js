@@ -7,6 +7,8 @@ export async function fetchLocalWeather(lat, lon, admin1, countryCode) {
     if (countryCode) params.set('countryCode', countryCode)
     const res = await fetch(`${BACKEND}/api/local-weather?${params}`)
     if (!res.ok) return null
+    const contentType = res.headers.get('content-type') ?? ''
+    if (!contentType.includes('application/json')) return null
     return res.json()
   } catch {
     // Backend not running or unreachable — degrade gracefully
